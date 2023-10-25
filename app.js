@@ -25,4 +25,15 @@ const weekdays = [
 const giveaway = document.querySelector(".giveaway");
 const deadline = document.querySelector(".deadline");
 const items = document.querySelectorAll(".deadline-format h4");
-console.log(items);
+
+let futureDate = new Date(2023, 11, 24, 22, 30, 0);
+console.log(futureDate);
+
+const year = futureDate.getFullYear();
+const hours = futureDate.getHours();
+const minutes = futureDate.getMinutes();
+let month = months[futureDate.getMonth()];
+const date = futureDate.getDate();
+const weekDay = weekdays[futureDate.getDay()];
+
+giveaway.textContent = `Giveaway ends on ${weekDay}, ${month} ${date} ${year} ${hours}:${minutes} `;
